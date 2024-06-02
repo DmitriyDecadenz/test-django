@@ -1,11 +1,11 @@
 version: "3"
 services:
-  web:
-    build: ./web
+  src:
+    build: ./src
     ports:
       - "8000:8000"
     volumes:
-      - ./web/app:/app
+      - ./src/app:/app
     command: python manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
@@ -16,29 +16,6 @@ services:
   redis:
     image: "redis:alpine"
 
-  celery:
-    build: ./web
-    command: celery -A app worker -l info
-    volumes:
-      - ./web/app:/app
-    depends_on:
-      - db
-      - redis
-    env_file: .env
-    environment:
-      - DEBUG=TRUE
-
-  celery-beat:
-    build: ./web
-    command: celery -A app beat -l info
-    volumes:
-      - ./web/app:/app
-    depends_on:
-      - db
-      - redis
-    env_file: .env
-    environment:
-      - DEBUG=TRUE
 
   db:
     image: postgres:10-alpine
