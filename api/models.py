@@ -1,9 +1,6 @@
-from typing import Union
-
-from django.db import models, transaction
+from django.db import models
 from django.utils.translation import gettext_lazy as _
 from config.settings import AUTH_USER_MODEL
-
 
 
 class Transaction(models.Model):
@@ -61,6 +58,6 @@ class Transaction(models.Model):
     objects = models.Manager()
 
     def __str__(self) -> str:
-        return f'Транзакция пользователя {self.user} '
+        return f'Транзакция пользователя {self.user}'
 
 
