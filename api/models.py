@@ -5,22 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from config.settings import AUTH_USER_MODEL
 
 
-class Action(models.Model):
-    amount = models.DecimalField(
-        max_digits=12,
-        decimal_places=2
-    )
-    date = models.DateTimeField(auto_now_add=True)
-
-    user = models.ForeignKey(
-        AUTH_USER_MODEL,
-        on_delete=models.PROTECT  # we cannot delete user with money
-    )
-
-    def __str__(self):
-        return f'Account number {self.account.id} ' +\
-            f'was changed on {str(self.amount)}'
-
 
 class Transaction(models.Model):
 
@@ -77,6 +61,6 @@ class Transaction(models.Model):
     objects = models.Manager()
 
     def __str__(self) -> str:
-        return f'Account number {self.user} '
+        return f'Транзакция пользователя {self.user} '
 
 
