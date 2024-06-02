@@ -16,7 +16,7 @@ class ParseData:
             return None
         return items_info
 
-    async def get_transaction_by_id_json_list(self, transaction_id: int):
+    async def get_transaction_by_id_json_list(self, transaction_id: int) -> dict | None:
         response = httpx.get(f'{self.url}/transaction/{transaction_id}/?format=json')
         if response.status_code == 204:
             return None
@@ -24,6 +24,7 @@ class ParseData:
             items_info = response.json()
         except JSONDecodeError:
             return None
+        print(items_info)
         return items_info
 
     async def get_users_transactions_json_list(self, user_id: int) -> list[dict] | None:
