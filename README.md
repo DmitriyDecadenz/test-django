@@ -18,15 +18,44 @@ fill the fields
 
 example:
 
+
+
+
 ```terminal
-API_ID = 12345
+SECRET_KEY='your secret key'
 ```
 
 ```terminal
-API_HASH = '0123456789abcdef0123456789abcdef'
+DEBUG=True
 ```
 
+```terminal
+ALLOWED_HOSTS='1270.0.1 localhost
+```
+
+```terminal
+PG_DATABASE=test-django
+PG_USER=postgres
+PG_PASSWORD=postgres
+DB_HOST=localhost
+DB_PORT=5432
+```
+
+```terminal
+BOT_TOKEN='your bot token(take form BotFather)
+```
 4.
-```terminal
-uvicorn src.main:app --reload
-```django
+
+```commandline
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py runserver
+```
+
+ 5.
+
+Run main.py file in tg_bot directory to start telegram bot
+
+
