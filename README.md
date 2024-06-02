@@ -54,6 +54,10 @@ python manage.py makemigrations
 
 python manage.py migrate
 
+python manage.py loaddata users/fixtures/users.json
+
+python manage.py loaddata api/fixtures/transaction.json
+
 python manage.py runserver
 ```
 
