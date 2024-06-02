@@ -1,6 +1,5 @@
 import os
 from datetime import timedelta
-
 import environ
 
 
@@ -26,7 +25,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'rest_framework.authtoken',
-    'django.contrib.sites',  # from offial docs, needed for registration
+    'django.contrib.sites',
     'drf_spectacular',
     'djoser',
     'django_filters',
@@ -94,8 +93,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -106,7 +103,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 
 STATIC_URL = '/static/'
