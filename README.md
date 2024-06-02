@@ -2,7 +2,7 @@
 
 ## To see all urls, open swagger-ui
 ```
-http://127.0.0.1:8000:/api/
+http://127.0.0.1:8000/api/
 ```
 # How to start app
 
